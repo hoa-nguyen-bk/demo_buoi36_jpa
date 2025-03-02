@@ -10,12 +10,13 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-
     private String username;
     private String password;
 
     @OneToMany(mappedBy = "users")
     private List<UsersRoles> usersRoles;
+
+
 
     public int getId() {
         return id;
@@ -39,5 +40,13 @@ public class Users {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<UsersRoles> getUsersRoles() {
+        return usersRoles;
+    }
+
+    public void setUsersRoles(List<UsersRoles> usersRoles) {
+        this.usersRoles = usersRoles;
     }
 }
